@@ -17,6 +17,15 @@ cat("Percentage change :", round(df$percentage_change[5],2), "%/n")
 
 df$running_no <- seq_len(nrow(df))
 df
+#Pace Difference
+first_pace <- df$avg_pace[1]
+df$pacedifference <- df$avg_pace - first_pace
+df$percentage_change_pace <- (df$avg_pace - first_pace) / first_pace * 100
+
+cat("First running avarage pace:", round(df$avg_pace[1], 2), "min/Km")
+cat("Last running avarage pace:", round(df$avg_pace[last], 2), "min/Km")
+cat("Total pace difference:", round(df$pacedifference[last], 2), "min/Km")
+cat("Percentage pace change:", round(df$percentage_change_pace[last], 2), "%/km")
 
 #linear regression
 model_time <- lm(moving_time ~ running_no, data = df)
@@ -30,4 +39,5 @@ plot(df$date, df$moving_time,
      xlab = "Date",
      ylab = "5K moving time(min)",
      main = "5K time according to number of running")
+
 abline(model_time, lwd =2)
