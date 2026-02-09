@@ -38,6 +38,7 @@ summary(model_time)
 
 model_pace <- lm(avg_pace ~ running_no, data = df)
 summary(model_pace)
+
 # Time vs Date
 plot(df$date, df$moving_time,
      type = "b",
@@ -46,4 +47,21 @@ plot(df$date, df$moving_time,
      main = "5K time according to number of running")
 
 abline(model_time, lwd =2)
+
+#Avg Pace vs Date
+plot(df$date, df$avg_pace,
+     type = "b",
+     xlab = "Date",
+     ylab = "Avg Pace(min)",
+     main = "Avarage pace according to number of running")
+abline(model_time, lwd = 2)
+# VO2MAX vs Date
+plot(df$date, df$vo2max,
+     type = "b",
+     xlab = "Date",
+     ylab = "Vo2max(ml/kg/min)",
+     main = "Vo2max according to number of running")
+abline(model_time, lwd = 2)
+
+
 
