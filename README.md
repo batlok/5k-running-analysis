@@ -11,13 +11,14 @@ Columns:
 - `DATE` – date of the 5K run
 - `MOVING TIME` – total 5K time in minutes
 - `AVG. PACE` – average pace (min/km)
+- `VO2MAX` - VO2MAX (ml/kg/min)
 
 The data is a small sample (n = 5) from my own runs, sorted by date.
 
 ## Goals
 
 - First vs last run comparison:
-  - Calculate the time difference and percentage improvement relative to the first 5K.
+  - Calculate the time, pace and vo2max difference and percentage improvement relative to the first 5K.
 - Simple trend analysis:
   - Fit a linear regression model  
     `moving_time ~ running_no`  
